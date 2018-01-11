@@ -1,0 +1,47 @@
+Python基础环境安装：
+
+1.Python是一种能够运行与Linux平台和Windows平台的编程语言（脚本语言）
+
+2.官网下载：https://www.python.org/
+ 
+ 对于不同操作系统及操作系统位数选择正确的安装包（官网也提供了源代码）
+  在本章中以Windows平台安装为例
+  
+3.通过下载x86_64位安装包安装Python基础环境，打开cmd程序
+  
+  python -V 可以查看安装版本，如果提示没有相关命令则需要手动在Windows操作系统添加环境变量，这样才能找到相关程序
+  
+4.Python开发工具IDE的选择，常见的有Eclipse/PyCharm/Netbeans等等，推荐使用PyCharm开发工具
+
+5.在开发中可能会在同一个操作系统中使用多个版本的Python（Python2、Python3），这样就需要在同一操作系统中多版本共存
+  
+  a.在使用IDE开发时可以很容易选择Python版本，只需要在同一操作系统安装不同版本即可
+  
+  b.如果使用命令行进行开发，这里就可能会使用到虚拟环境（virtualenv）
+    
+    1.Python在线安装软件（程序包）可通过源码代码安装（python setup.py install）/通过pip软件安装（pip install virtualenv）/通过easy_install软件安装（easy_install virtualenv）
+    
+    2.对于pip与easy_install软件的安装可以先下载源代码使用python setup.py install提前安装
+    
+    3.在此以pip安装虚拟环境为例，pip install virtualenv
+    
+    4.创建一个python的虚拟环境:virtualenv [-p python(python.exe绝对路径)] test_demo
+    
+    5.virtualenv虚拟环境：activate #进入虚拟环境（需要找到activate绝对路径，在Windows平台后缀名为.bat，一般来说pip安装后程序出现在Python安装目录的Scripts目录下面）
+    
+    6.虚拟环境的"管理工具"-virtualenvwrapper
+
+     a.我们如果需要切换虚拟环境，则必须先切换到虚拟环境所在目录，并运行activate,bat,这样实在是太麻烦了；可以使用virtualenvwrapper对虚拟环境进行一些快捷的管理和操作
+     
+     b.pip install virtualenvwrapper-win #windows下安装要加-win
+     
+     c.mkvirtualenv envname # 生成后会自动切换到最新创建的虚拟环境中（需要找到activate绝对路径，在Windows平台后缀名为.bat，一般来说pip安装后程序出现在Python安装目录的Scripts目录下面）
+     
+     d.查看虚拟环境的列表：workon # 打印当前创建的虚拟环境列表
+     
+     e.快速进入某个虚拟环境：workon py3 # 后接虚拟环境的名字，退出还是使用deativate的命令
+     
+     f.配置虚拟环境生成路径：你可能发现了，使用virtualenvwrapper 生成的虚拟环境默认都是在c盘用户的一个envs的文件夹里，怎么修改生成的默认路径呢？需要你手动配置环境变量WORKON_HOME，变量值设为你想要保存虚拟环境的路径；
+     
+     g.详细配置可见：https://www.zhangshengrong.com/p/q0arAGq1xr/
+     
